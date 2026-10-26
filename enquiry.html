@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry - Order Streetwear via WhatsApp | CueMotion Bloemfontein</title>
+    <meta name="description" content="Contact CueMotion Apparel in Bloemfontein Free State. Order via WhatsApp 078 912 3456, email hello@cuemotion.co.za or Instagram @thereal_cuemotion. Enquiry form for tees, hoodies, tracksuits.">
+    <meta name="keywords" content="contact CueMotion, order streetwear Bloemfontein, CueMotion WhatsApp, streetwear enquiry Free State, buy CueMotion SA">
+    <meta name="author" content="CueMotion Apparel">
+    <link rel="canonical" href="https://cuemotionapparel.com/enquiry.html">
+    
+    <!-- this is for page speed -->
+    <!-- i preload css so it loads fast -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- security headers -->
+    <!-- this protects the site -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- og tags for social media sharing -->
+    <meta property="og:title" content="Contact CueMotion Apparel - Bloemfontein Streetwear Orders">
+    <meta property="og:description" content="Contact CueMotion in Bloemfontein. Order via WhatsApp, Email, Instagram. Premium SA streetwear.">
+    <meta property="og:image" content="https://cuemotionapparel.com/images/CueMotionLogo.jpg">
+    <meta property="og:url" content="https://cuemotionapparel.com/enquiry.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:site_name" content="CueMotion Apparel">
+
+    <!-- schema -->
+    <!-- this helps google know what the business is -->
+    <script type="application/ld+json">
+    {"@context": "https://schema.org","@type": "Organization","name": "CueMotion Apparel","url": "https://cuemotionapparel.com","logo": "https://cuemotionapparel.com/images/CueMotionLogo.jpg","sameAs": ["https://instagram.com/thereal_cuemotion","https://www.tiktok.com/@official_cuemotion"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org","@type": "ClothingStore","name": "CueMotion Apparel","image": "https://cuemotionapparel.com/images/CueMotionLogo.jpg","address": {"@type": "PostalAddress","addressLocality": "Bloemfontein","addressRegion": "Free State","addressCountry": "ZA"},"url": "https://cuemotionapparel.com/enquiry.html","contactPoint": {"@type": "ContactPoint","telephone": "+27-78-912-3456","contactType": "customer service","email": "hello@cuemotion.co.za","areaServed": "ZA"}}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>CueMotion Apparel</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="animate-section">
+            <h2>Get In Touch With Us</h2>
+            <!-- this is my form -->
+            <!-- i will validate it -->
+            <form id="enquiryForm" action="#" method="post" onsubmit="return handleEnquiry(event)">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required minlength="3"><br>
+                <!-- error for name -->
+                <span id="nameError" class="error"></span><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <!-- error for email -->
+                <span id="emailError" class="error"></span><br><br>
+
+                <label for="phone">WhatsApp Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,}" title="Enter 10 digit number"><br>
+                <span id="phoneError" class="error"></span><br><br>
+
+                <!-- enquiry type -->
+                <!-- adding types for services and products -->
+                <label for="enqType">Enquiry Type:</label><br>
+                <select id="enqType" name="enqType" required>
+                    <option value="">-- Select Enquiry --</option>
+                    <option value="products">Product Enquiry</option>
+                    <option value="services">Custom Design Service</option>
+                    <option value="volunteer">Become Brand Ambassador (Volunteer)</option>
+                    <option value="sponsor">Sponsorship / Collaboration</option>
+                </select><br>
+                <!-- error for type -->
+                <span id="typeError" class="error"></span><br><br>
+
+                <label for="message">Your Enquiry / Order Details:</label><br>
+                <textarea id="message" name="message" rows="5" required minlength="10"></textarea><br>
+                <!-- error for message -->
+                <span id="messageError" class="error"></span><br><br>
+
+                <input type="submit" value="Submit Enquiry">
+            </form>
+
+            <!-- box for response -->
+            <div id="responseBox" style="display:none; border:1px solid green; padding:15px; margin-top:20px; background:#e8ffe8;"></div>
+        </section>
+ 
+        <section>
+            <h3>Or Contact Us Direct</h3>
+            <p><b>WhatsApp:</b> <a href="https://wa.me/27789123456" target="_blank" rel="noopener noreferrer">078 912 3456</a></p>
+            <p><b>Email:</b> <a href="mailto:hello@cuemotion.co.za">hello@cuemotion.co.za</a></p>
+            <p><b>Instagram:</b> <a href="https://instagram.com/thereal_cuemotion" target="_blank" rel="noopener noreferrer">@thereal_cuemotion</a></p>
+            <p><b>Location:</b> Bloemfontein, Free State, South Africa</p>
+            <!-- map div -->
+            <div id="map" style="width:100%;height:300px;background-color:lightgrey;">
+                <p style="text-align:center;padding-top:130px;">Map of Bloemfontein - CueMotion Location</p>
+            </div>
+            <p><a href="products.html">View Collection</a> | <a href="about.html">About Us</a></p>
+        </section>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2026 CueMotion Apparel. Built in the studio. Worn on the streets. Proudly South African. | Bloemfontein, Free State, SA</p>
+        <nav><a href="index.html">Home</a> | <a href="products.html">Shop Collection</a> | <a href="about.html">Our Story</a> | <a href="reviews.html">Reviews</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></nav>
+        <p>Follow us: <a href="https://instagram.com/thereal_cuemotion" target="_blank" rel="noopener noreferrer">Instagram @thereal_cuemotion</a> | <a href="https://www.tiktok.com/@official_cuemotion" target="_blank" rel="noopener noreferrer">TikTok @official_cuemotion</a> | <a href="https://wa.me/27789123456" target="_blank" rel="noopener noreferrer">WhatsApp 078 912 3456</a> | <a href="mailto:hello@cuemotion.co.za">hello@cuemotion.co.za</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

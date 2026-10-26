@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Streetwear Collection | Tees, Hoodies, Tracksuits - CueMotion</title>
+  <meta name="description" content="Shop CueMotion streetwear collection in Bloemfontein. Tees R350, Hoodies R750, Bottoms R650, Jackets. Filter by size, color, price. Proudly South African streetwear.">
+  <meta name="keywords" content="buy streetwear Bloemfontein, CueMotion tees, oversized hoodies South Africa, tracksuits Free State, Motion jackets SA">
+  <meta name="author" content="CueMotion Apparel">
+  <link rel="canonical" href="https://cuemotionapparel.com/products.html">
+  
+  <!-- I added preload for css and image for page speed becuase I want my page to load faster -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="images/WhiteShirt.jpg" as="image">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+  <!-- I added these security headers becuase I want to protect my website from attacks -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- I added og tags for social media becuase I want link to look nice when shared on Instagram -->
+  <meta property="og:title" content="Shop Streetwear Collection - CueMotion Apparel Bloemfontein">
+  <meta property="og:description" content="Shop Tees R350, Hoodies R750, Tracksuits. Premium South African streetwear from Bloemfontein.">
+  <meta property="og:image" content="https://cuemotionapparel.com/images/CueMotionLogo.jpg">
+  <meta property="og:url" content="https://cuemotionapparel.com/products.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="CueMotion Apparel">
+
+  <!-- I added schema json for SEO becuase I want Google to understand my brand -->
+  <script type="application/ld+json">
+  {"@context": "https://schema.org","@type": "Organization","name": "CueMotion Apparel","url": "https://cuemotionapparel.com","logo": "https://cuemotionapparel.com/images/CueMotionLogo.jpg","sameAs": ["https://instagram.com/thereal_cuemotion","https://www.tiktok.com/@official_cuemotion"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org","@type": "ClothingStore","name": "CueMotion Apparel","image": "https://cuemotionapparel.com/images/CueMotionLogo.jpg","address": {"@type": "PostalAddress","addressLocality": "Bloemfontein","addressRegion": "Free State","addressCountry": "ZA"},"url": "https://cuemotionapparel.com/products.html"}
+  </script>
+</head>
+<body>
+<header>
+ <h1>CueMotion Apparel</h1>
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="enquiry.html">Enquiry</a>
+  <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="animate-section">
+<h2>Our Collection</h2>
+<p>Minimal cuts. Maximum motion. Available in Black, White, Cream, Grey.</p>
+<p><b>Sizes:</b> S, M, L, XL, XXL</p>
+
+<!-- I added filter buttons becuase I want user to filter by category like tees and hoodies -->
+<div id="filterBtns">
+  <button class="filter-btn active" onclick="filterProducts('all')">Show All</button>
+  <button class="filter-btn" onclick="filterProducts('tees')">Tees</button>
+  <button class="filter-btn" onclick="filterProducts('hoodies')">Hoodies</button>
+  <button class="filter-btn" onclick="filterProducts('bottoms')">Bottoms</button>
+  <button class="filter-btn" onclick="filterProducts('jackets')">Jackets</button>
+  <button class="filter-btn" onclick="filterProducts('caps')">Caps & Hats</button>
+  <button class="filter-btn" onclick="filterProducts('socks')">Socks</button>
+</div>
+
+<!-- I added search and sort wrapper for searching becuase I want user to find product fast -->
+<div class="search-sort-wrapper">
+  <input type="text" id="myInput" onkeyup="searchProducts()" placeholder="Search for products.." title="Type in a name">
+  <select id="sortSelect" onchange="sortProducts()">
+    <option value="default">Sort by: Default</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+    <option value="az">Name: A to Z</option>
+  </select>
+</div>
+</section>
+
+<!-- I added tabs becuase I want to separate clothes into categories like in w3schools -->
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'Tees')">Tees</button>
+  <button class="tablinks" onclick="openTab(event, 'Hoodies')">Hoodies</button>
+  <button class="tablinks" onclick="openTab(event, 'Bottoms')">Bottoms</button>
+  <button class="tablinks" onclick="openTab(event, 'Jackets')">Jackets</button>
+  <button class="tablinks" onclick="openTab(event, 'Caps')">Caps & Hats</button>
+  <button class="tablinks" onclick="openTab(event, 'Socks')">Socks</button>
+  <button class="tablinks" onclick="openTab(event, 'AllDynamic')">All Products</button>
+</div>
+
+<!-- I added this section becuase I load products with JavaScript here -->
+<section id="AllDynamic" class="tabcontent" style="display:block">
+<h3>All Products</h3>
+<div id="productList" class="products-grid"></div>
+</section>
+
+<section id="Tees" class="tabcontent product-category tees">
+<h3>Cue Tees - 100% Cotton Streetwear Tees</h3>
+<div class="products-grid">
+<div class="product-card" data-category="tees" data-price="350" data-name="White Tee">
+<img class="gallery-img" src="images/WhiteShirt.jpg" alt="White Tee streetwear Bloemfontein - CueMotion Apparel" width="300" height="300" fetchpriority="high" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">White Tee</p><p class="price">R350</p><button class="view-btn" onclick="openProductModal('White Tee - R350')">View Details</button></div>
+</div>
+<div class="product-card" data-category="tees" data-price="350" data-name="Cream Tee">
+<img class="gallery-img" src="images/CreamWhiteShirt.jpg" alt="Cream Tee South African streetwear - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Cream Tee</p><p class="price">R350</p><button class="view-btn" onclick="openProductModal('Cream Tee - R350')">View Details</button></div>
+</div>
+<div class="product-card" data-category="tees" data-price="350" data-name="Black Tee">
+<img class="gallery-img" src="images/BlackShirt.jpg" alt="Black Tee streetwear Free State - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Black Tee</p><p class="price">R350</p><button class="view-btn" onclick="openProductModal('Black Tee - R350')">View Details</button></div>
+</div>
+<div class="product-card" data-category="tees" data-price="350" data-name="Grey Tee">
+<img class="gallery-img" src="images/GreyShirt.jpg" alt="Grey Tee streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Grey Tee</p><p class="price">R350</p><button class="view-btn" onclick="openProductModal('Grey Tee - R350')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section id="Hoodies" class="tabcontent product-category hoodies">
+<h3>Motion Hoodies - Oversized Streetwear Hoodies</h3>
+<div class="products-grid">
+<div class="product-card" data-category="hoodies" data-price="750" data-name="White Hoodie">
+<img class="gallery-img" src="images/WhiteHoodie.jpg" alt="White Hoodie oversized streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">White Hoodie</p><p class="price">R750</p><button class="view-btn" onclick="openProductModal('White Hoodie - R750')">View Details</button></div>
+</div>
+<div class="product-card" data-category="hoodies" data-price="750" data-name="Black Hoodie">
+<img class="gallery-img" src="images/BlackHoodie.jpg" alt="Black Hoodie oversized streetwear South Africa - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Black Hoodie</p><p class="price">R750</p><button class="view-btn" onclick="openProductModal('Black Hoodie - R750')">View Details</button></div>
+</div>
+<div class="product-card" data-category="hoodies" data-price="750" data-name="Grey Hoodie">
+<img class="gallery-img" src="images/GreyHoodie.jpg" alt="Grey Hoodie streetwear Free State - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Grey Hoodie</p><p class="price">R750</p><button class="view-btn" onclick="openProductModal('Grey Hoodie - R750')">View Details</button></div>
+</div>
+<div class="product-card" data-category="hoodies" data-price="750" data-name="Cream Hoodie">
+<img class="gallery-img" src="images/CreamWhiteHoodie.jpg" alt="Cream Hoodie oversized streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Cream Hoodie</p><p class="price">R750</p><button class="view-btn" onclick="openProductModal('Cream Hoodie - R750')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section id="Bottoms" class="tabcontent product-category bottoms">
+<h3>Motion Bottoms - Tracksuits & Streetwear Pants</h3>
+<div class="products-grid">
+<div class="product-card" data-category="bottoms" data-price="650" data-name="White Pants">
+<img class="gallery-img" src="images/WhitePants.jpg" alt="White Track Pants streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">White Pants</p><p class="price">R650</p><button class="view-btn" onclick="openProductModal('White Pants - R650')">View Details</button></div>
+</div>
+<div class="product-card" data-category="bottoms" data-price="650" data-name="Black Pants">
+<img class="gallery-img" src="images/BlackPants.jpg" alt="Black Track Pants streetwear South Africa - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Black Pants</p><p class="price">R650</p><button class="view-btn" onclick="openProductModal('Black Pants - R650')">View Details</button></div>
+</div>
+<div class="product-card" data-category="bottoms" data-price="650" data-name="Cream Pants">
+<img class="gallery-img" src="images/CreamWhitePants.jpg" alt="Cream Track Pants streetwear Free State - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Cream Pants</p><p class="price">R650</p><button class="view-btn" onclick="openProductModal('Cream Pants - R650')">View Details</button></div>
+</div>
+<div class="product-card" data-category="bottoms" data-price="650" data-name="Grey Pants">
+<img class="gallery-img" src="images/GreyPants.jpg" alt="Grey Track Pants streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Grey Pants</p><p class="price">R650</p><button class="view-btn" onclick="openProductModal('Grey Pants - R650')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section id="Jackets" class="tabcontent">
+<h3>Motion Jackets - Premium Streetwear Jackets</h3>
+<div class="products-grid">
+<div class="product-card" data-category="jackets" data-price="900" data-name="Motion Jacket">
+<img class="gallery-img" src="images/Jacket1.jpg" alt="Motion Jacket streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Motion Jacket</p><p class="price">R900</p><button class="view-btn" onclick="openProductModal('Motion Jacket - R900')">View Details</button></div>
+</div>
+<div class="product-card" data-category="jackets" data-price="1199" data-name="Motion Jacket">
+<img class="gallery-img" src="images/Jacket2.jpg" alt="Motion Jacket streetwear South Africa - CueMotion 2" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Motion Jacket</p><p class="price">R1199</p><button class="view-btn" onclick="openProductModal('Motion Jacket - R1199')">View Details</button></div>
+</div>
+<div class="product-card" data-category="jackets" data-price="1299" data-name="Motion Jacket">
+<img class="gallery-img" src="images/Jacket3.jpg" alt="Motion Jacket streetwear Free State - CueMotion 3" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Motion Jacket</p><p class="price">R1299</p><button class="view-btn" onclick="openProductModal('Motion Jacket - R1299')">View Details</button></div>
+</div>
+<div class="product-card" data-category="jackets" data-price="1599" data-name="Motion Jacket">
+<img class="gallery-img" src="images/Jacket4.jpg" alt="Motion Jacket streetwear Bloemfontein - CueMotion 4" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Motion Jacket</p><p class="price">R1599</p><button class="view-btn" onclick="openProductModal('Motion Jacket - R1599')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section id="Caps" class="tabcontent">
+<h3>Caps & Hats - Streetwear Accessories</h3>
+<div class="products-grid">
+<div class="product-card" data-category="caps" data-price="250" data-name="Cue Caps">
+<img class="gallery-img" src="images/CueCaps.jpg" alt="Cue Caps streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Cue Caps</p><p class="price">R250</p><button class="view-btn" onclick="openProductModal('Cue Caps - R250')">View Details</button></div>
+</div>
+<div class="product-card" data-category="caps" data-price="250" data-name="Bucket Hat">
+<img class="gallery-img" src="images/MotionBucketHats.jpg" alt="Bucket Hat streetwear Bloemfontein - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Bucket Hat</p><p class="price">R250</p><button class="view-btn" onclick="openProductModal('Bucket Hat - R250')">View Details</button></div>
+</div>
+<div class="product-card" data-category="caps" data-price="200" data-name="Black Beanie">
+<img class="gallery-img" src="images/BlackBeanie.jpg" alt="Black Beanie streetwear South Africa - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Black Beanie</p><p class="price">R200</p><button class="view-btn" onclick="openProductModal('Black Beanie - R200')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section id="Socks" class="tabcontent">
+<h3>Cue Socks - Streetwear Socks</h3>
+<div class="products-grid">
+<div class="product-card" data-category="socks" data-price="120" data-name="Cue Socks">
+<img class="gallery-img" src="images/Socks.jpg" alt="Cue Socks streetwear South Africa - CueMotion" width="300" height="300" loading="lazy" decoding="async">
+<div class="product-info"><p class="brand">CueMotion Apparel</p><p class="name">Cue Socks</p><p class="price">R120</p><button class="view-btn" onclick="openProductModal('Cue Socks - R120')">View Details</button></div>
+</div>
+</div>
+</section>
+
+<section><h3>How To Order</h3><p>See something you like? Head to our <a href="enquiry.html">Enquiry Page</a> and tell us the item, color, and size. WhatsApp: 078 912 3456</p></section>
+</main>
+
+<!-- I added product modal for view details becuase I want to show price when user clicks button -->
+<div id="productModal" class="modal"><div class="modal-content"><span class="close" onclick="closeProductModal()">&times;</span><p id="productModalText"></p><a href="enquiry.html">Go to Enquiry</a></div></div>
+<!-- I added image modal for lightbox becuase I want image to be bigger when clicked -->
+<div id="myModal" class="modal"><span class="close">&times;</span><img class="modal-content" id="modalImg" alt="Enlarged product view"></div>
+
+<footer>
+<p>&copy; 2026 CueMotion Apparel. Built in the studio. Worn on the streets. Proudly South African. | Bloemfontein, Free State, SA</p>
+<nav><a href="index.html">Home</a> | <a href="products.html">Shop Collection</a> | <a href="about.html">Our Story</a> | <a href="reviews.html">Reviews</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></nav>
+<p>Follow us: <a href="https://instagram.com/thereal_cuemotion" target="_blank" rel="noopener noreferrer">Instagram @thereal_cuemotion</a> | <a href="https://www.tiktok.com/@official_cuemotion" target="_blank" rel="noopener noreferrer">TikTok @official_cuemotion</a> | <a href="https://wa.me/27789123456" target="_blank" rel="noopener noreferrer">WhatsApp 078 912 3456</a> | <a href="mailto:hello@cuemotion.co.za">hello@cuemotion.co.za</a></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CueMotion Apparel Bloemfontein</title>
+    <meta name="description" content="Contact CueMotion Apparel in Bloemfontein. Order via WhatsApp 078 912 3456, Email hello@cuemotion.co.za, Instagram @thereal_cuemotion.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>CueMotion Apparel</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="animate-section">
+            <h2>Contact Us</h2>
+            <p>We are based in Bloemfontein, Free State. Chat to us to order.</p>
+            
+            <!-- contact form -->
+            <!-- basic contact info and message type -->
+            <form id="contactForm" action="#" method="post" onsubmit="return handleContact(event)">
+                <label for="cName">Full Name:</label><br>
+                <input type="text" id="cName" name="cName" required minlength="3"><br>
+                <!-- error for name -->
+                <span id="cNameError" class="error"></span><br><br>
+
+                <label for="cEmail">Email Address:</label><br>
+                <input type="email" id="cEmail" name="cEmail" required><br>
+                <span id="cEmailError" class="error"></span><br><br>
+
+                <label for="cPhone">Phone / WhatsApp:</label><br>
+                <input type="tel" id="cPhone" name="cPhone" required pattern="[0-9]{10,15}" title="Enter valid phone number"><br>
+                <span id="cPhoneError" class="error"></span><br><br>
+
+                <!-- type of message -->
+                <label for="cType">Type of Message:</label><br>
+                <select id="cType" name="cType" required>
+                    <option value="">-- Select --</option>
+                    <option value="General Enquiry">General Enquiry</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Suggestion">Suggestion</option>
+                    <option value="Support Request">Support Request</option>
+                </select><br>
+                <span id="cTypeError" class="error"></span><br><br>
+
+                <label for="cMessage">Full Message:</label><br>
+                <textarea id="cMessage" name="cMessage" rows="5" required minlength="10"></textarea><br>
+                <!-- error for message -->
+                <span id="cMessageError" class="error"></span><br><br>
+
+                <input type="submit" value="Prepare Email">
+            </form>
+
+          
+            <div id="emailPreview" style="display:none; border:1px solid #333; padding:15px; margin-top:20px; background:#f9f9f9;"></div>
+
+            <br>
+            <h3>Our Details</h3>
+            <p><b>WhatsApp:</b> <a href="https://wa.me/27789123456" target="_blank">078 912 3456</a></p>
+            <p><b>Email:</b> <a href="mailto:hello@cuemotion.co.za">hello@cuemotion.co.za</a></p>
+            <p><b>Instagram:</b> <a href="https://instagram.com/thereal_cuemotion" target="_blank">@thereal_cuemotion</a></p>
+            <p><b>TikTok:</b> <a href="https://www.tiktok.com/@official_cuemotion" target="_blank">@official_cuemotion</a></p>
+            <p><b>Location:</b> Bloemfontein, Free State, South Africa</p>
+
+            <!-- map div -->
+            <div id="map" style="width:100%;height:300px;background-color:lightgrey;">
+                <p style="text-align:center;padding-top:130px;">Map of Bloemfontein - CueMotion Location</p>
+            </div>
+            <br>
+            <p><a href="products.html">View Collection</a> | <a href="enquiry.html">Send Enquiry</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CueMotion Apparel. Built in the studio. Worn on the streets. Proudly South African. | Bloemfontein, Free State, SA</p>
+        <nav><a href="index.html">Home</a> | <a href="products.html">Shop Collection</a> | <a href="about.html">Our Story</a> | <a href="reviews.html">Reviews</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></nav>
+        <p>Follow us: <a href="https://instagram.com/thereal_cuemotion" target="_blank">Instagram @thereal_cuemotion</a> | <a href="https://www.tiktok.com/@official_cuemotion" target="_blank">TikTok @official_cuemotion</a> | <a href="https://wa.me/27789123456" target="_blank">WhatsApp 078 912 3456</a> | <a href="mailto:hello@cuemotion.co.za">hello@cuemotion.co.za</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

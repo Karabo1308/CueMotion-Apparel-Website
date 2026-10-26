@@ -1,77 +1,66 @@
- CueMotion Apparel Website
+CueMotion Apparel Website - WEDE5020 Part 3
 
- Student Information
-Name: Karabo Moloko
-Student Number: ST10525881
-Module: Web Development
-Lecturer: Mr Sipho 
-Date: 16 September 2026
+  Student Information
+- Name: Karabo Moloko
+- Student Number: ST10525881
+- Module: Web Development (WEDE5020)
+- Lecturer: Mr Sipho
+- Date: 16 September 2026
+- GitHub Repo: https://github.com/Karabo1308/CueMotion-Apparel-Website
+- Live Deployment: https://karabo1308.github.io/CueMotion-Apparel-Website/
 
-Project Overview
-CueMotion Apparel is an online store that sells casual wear and accessories. 
-The goal is to provide customers with an easy way to browse products and make enquiries online.
+   Project Overview
+CueMotion Apparel is an online streetwear store based in Bloemfontein, selling casual wear and accessories. The goal is to provide customers with an easy way to browse products (Tees, Hoodies, Bottoms, Jackets, Beanies, Bucket Hats, Socks) and make enquiries online. This is Part 3 final submission with full SEO, interactivity and form functionality.
 
-Website Goals and Objectives
+   Website Goals and Objectives
 1. To showcase CueMotion Apparel products to potential customers
 2. To provide company information and build trust
-3. To allow customers to send enquiries through a contact form
+3. To allow customers to send enquiries through contact and enquiry forms
 4. To display customer reviews and testimonials
+5. To improve search engine visibility and user experience
 
-Key Features
-1. Home page with navigation to all sections
-2. About page with company details
-3. Products page listing items for sale (Tees, Hoodies, Bottoms, Jackets, Beanies, Accessories)
-4. Enquiry page with contact form
-5. Reviews page with customer feedback
-6. Responsive design for all devices
+   Key Features Implemented 
+1.Interactive Elements : Product filter (Show All, Tees, Hoodies, Bottoms, Jackets, Beanies, Bucket Hat, Socks), accordion in product care, tabs in product details
+2.Interactive Maps : OpenStreetMap for Bloemfontein store location with responsive pop-up
+3.Gallery Lightbox : Clickable product images with modal lightbox, prev/next navigation
+4.Dynamic Content and Search : 17 products with live JavaScript search, real time filtering without page reload
+5.SEO Optimised : Unique title tags per page, meta keywords (streetwear Bloemfontein, CueMotion Apparel), meta descriptions, image file names (WhiteShirt.jpg not IMG_123) 
+6.Form Functionality : Enquiry form with controls, validation (required fields, email regex, immediate error feedback), process response + Contact form with mailto email compilation to hello@cuemotion.co.za
 
-Sitemap
-Home
-  About
-  Products
-  Enquiry
-  Reviews
+  Sitemap
+- index.html (Home)
+- about.html (About)
+- products.html (Products - 17 items)
+- enquiry.html (Enquiry Form)
+- contact.html (Contact Form + Map)
+- reviews.html (Customer Reviews)
 
-3.4 Testing and Iteration
+   Technologies Used
+- HTML5 
+- CSS 
+- JavaScript
+- OpenStreetMap 
+- GitHub Pages for deployment
 
-Testing Method
-I used Chrome DevTools to test the website on different screen sizes.
+   Testing and Iteration
+Testing Method:Chrome DevTools responsive testing
 
-Test Results
+  Test Result
+1. Desktop
+2. Tablet iPad
+3. Mobile iPhone SE
 
-1. Desktop 
-- Grid shows 4 columns correctly
-- Navigation bar displays in a row
-- All images load with correct aspect ratio
-- No horizontal scroll
-
-2. Tablet - iPad 
-- Grid adjusts to 2 columns
-- Navigation wraps correctly
-- Text remains readable
-- Product cards stack nicely
-
-
-3. Mobile - iPhone SE 
-- Grid shows 1 column
-- Hamburger menu works
-- Text and buttons are touch-friendly
-- No content overflow
+  Changes Made After Testing
+- Added responsive grid
+- Added media queries 
+- Made images responsive with width
+- Adjusted mobile padding
 
 
-Changes Made After Testing
-- Added responsive grid: grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
-- Added media queries for 768px and 480px breakpoints
-- Made images responsive with width: 100% and height: auto
-- Adjusted padding for mobile view to prevent overflow
-- Changed span tags to p tags for better semantics and beginner-friendly code
+   References 
+1. W3Schools. HTML Tutorial. Available at: https://www.w3schools.com/html/ 
+2. MDN Web Docs.  CSS Grid Layout. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout 
+3. Leaflet.  OpenStreetMap Integration Documentation. Available at: https://leafletjs.com/ 
+4. Google Developers. SEO Starter Guide. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide 
+5. Chrome DevTools.  Responsive Design Testing Documentation. Available at: https://developer.chrome.com/docs/devtools/ 
 
-Devices Tested
-- Desktop: Chrome on Windows 
-- Tablet: iPad Air 
-- Mobile: iPhone SE 
-
-References
-Images: Own product photos
-Code help: W3Schools tutorials for HTML structure
-Responsive testing: Chrome DevTools documentation

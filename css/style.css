@@ -1,0 +1,516 @@
+/* this removes default spacing from browser */
+/* i put this at top so all elements start same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* this is for html tag */
+/* i set base font size to 16px */
+html {
+    font-size: 16px;
+}
+
+/* this is body style */
+/* i used arial because it is simple and readable */
+/* background white and text black for contrast */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111;
+    background-color: #fff;
+    font-display: swap; /* this helps fonts load faster */
+}
+
+/* this is header */
+/* black background with white text */
+/* i used flex column to center everything */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* this is footer */
+/* same as header so it matches */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* this is main heading h1 */
+/* big and bold and uppercase */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* this is for h2 headings */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1em;
+}
+
+/* this is for h3 headings */
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* this is for paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+/* this is for the navigation bar */
+/* i used flex row to put links next to each other */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 10px;
+}
+
+/* this is for nav links */
+/* white text on black background */
+nav a {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+}
+
+/* when mouse is on link */
+nav a:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+/* when link is clicked */
+nav a:active {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* when link is focused with keyboard */
+/* yellow border so you can see it */
+nav a:focus {
+    border: 1px solid yellow;
+    outline: none;
+}
+
+/* this is products grid */
+/* 3 columns for desktop */
+/* i used content-visibility for speed */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1rem;
+    padding: 2%;
+    content-visibility: auto; 
+    contain-intrinsic-size: 0 500px; 
+}
+
+/* this is each product card */
+/* no box like nike website */
+/* just image and text below */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    contain: content; /* this helps performance */
+}
+
+/* this is product image */
+/* grey background like nike */
+/* contain so image does not stretch */
+.product-card img,
+.product-card picture img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background-color: #f6f6f6;
+    display: block;
+    padding: 20px;
+    content-visibility: auto; /* loads faster */
+}
+
+/* when you hover on product image */
+/* background becomes darker grey */
+.product-card:hover img {
+    background-color: #eeeeee;
+}
+
+.product-card:hover {
+    border: none;
+    box-shadow: none;
+}
+
+/* this is product info below image */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 10px 2px 0 2px;
+}
+
+/* brand name */
+.product-info .brand {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* product name */
+.product-info .name {
+    font-size: 0.9rem;
+    color: #757575;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+/* product price */
+.product-info .price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111;
+    margin-top: 6px;
+}
+
+/* this is sections */
+section {
+    background-color: #fff;
+    border: none;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+h2, h3 {
+    color: #000;
+}
+
+/* this is for tablet */
+/* screen smaller than 768px */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* change grid to 2 columns on tablet */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+    }
+
+    .product-card img,
+    .product-card picture img {
+        height: 260px;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+}
+
+/* this is for mobile */
+/* screen smaller than 480px */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+
+    /* 1 column on mobile */
+    .products-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    /* nav goes vertical on mobile */
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    .product-card img,
+    .product-card picture img {
+        height: 300px;
+    }
+}
+
+/* this part is for javascript things */
+/* i got this codes from w3schools */
+
+/* accordion button */
+/* looks like a button for faq */
+.accordion {
+    background-color: #eee;
+    color: #111;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* panel that shows when accordion is clicked */
+/* hidden at first */
+.panel {
+    padding: 10px 15px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+/* tabs container */
+.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+}
+
+.tab button {
+    background-color: inherit;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* tab content hidden at first */
+.tabcontent {
+    display: none;
+    padding: 10px;
+}
+
+/* modal popup */
+/* covers whole screen with dark background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* content inside modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* close button for modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* filter buttons */
+.filter-btn {
+    padding: 8px 15px;
+    margin: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* view details button */
+.view-btn {
+    margin-top: 8px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.view-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* gallery image cursor */
+.gallery-img {
+    cursor: pointer;
+}
+
+/* error text for form */
+.error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+/* success message for form */
+#formSuccess {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* map box */
+#map {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* search and sort wrapper */
+/* this holds search bar and dropdown */
+.search-sort-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+}
+
+/* search input */
+/* big search bar */
+#myInput {
+    width: 60%;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #111;
+}
+
+#myInput:focus {
+    outline: none;
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+/* sort dropdown */
+#sortSelect {
+    width: 35%;
+    font-size: 0.9rem;
+    padding: 12px 10px;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#sortSelect option {
+    background-color: #fff;
+    color: #000;
+}
+
+/* responsive for search and sort on tablet */
+@media screen and (max-width: 768px) {
+    .search-sort-wrapper {
+        flex-direction: column;
+    }
+    #myInput {
+        width: 100%;
+    }
+    #sortSelect {
+        width: 100%;
+    }
+}
